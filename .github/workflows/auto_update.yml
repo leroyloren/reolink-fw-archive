@@ -30,6 +30,9 @@ jobs:
       - name: Create local changes
         id: changes
         run: echo "firmwares=$(python main.py update -g)" >> $GITHUB_OUTPUT
+      - name: Show default environment variables
+        run: |
+          echo "The output is: $GITHUB_OUTPUT"
       - name: Commit files
         continue-on-error: true
         run: |
